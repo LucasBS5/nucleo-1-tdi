@@ -209,6 +209,14 @@ body{
     position: sticky;
     width: 3vw;
     left: 0.5rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.taskbar .taskbar-widget{
+    position: sticky;
+    width: auto;
+    height: auto;
     cursor: pointer;
 }
 

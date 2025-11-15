@@ -2,6 +2,7 @@
 
   let ventanaActiva = null;
   const aplicacion = document.querySelectorAll('.widget');
+  let widgetBarra = document.querySelector('.taskbar-widget');
 
   aplicacion.forEach(aplicaciones => {
     aplicaciones.addEventListener('click', (e) => {
@@ -9,6 +10,7 @@
       const target = aplicaciones.dataset.ventana;
       ventanaActiva = document.querySelector(`.ventana[data-ventana="${target}"]`);
       ventanaActiva.style.display = 'flex';
+      widgetBarra.style.display = 'inline-block';
     });
   });
 
@@ -16,6 +18,7 @@
     if (ventanaActiva && !ventanaActiva.contains(e.target)) {
       ventanaActiva.style.display = 'none';
       ventanaActiva = null;
+      widgetBarra.style.display = 'none';
     }  
   });
 }

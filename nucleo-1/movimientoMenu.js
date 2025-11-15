@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Separacion entre las ventanas, distancias y las rotaciones d
   const CONFIG = {
     // Distancia horizontal entre cada ventana en el eje X
-    SEPARACION_X: 250, 
+    SEPARACION_X: 200, 
     // Distancia en profundidad entre cada ventana en el eje Z
     PROFUNDIDAD_Z: 280, 
     // Grados de rotación en el eje Y (giro lateral) para el efecto abanico
@@ -49,31 +49,65 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-  // Control con la Rueda del Mouse
-  let lastRueda = performance.now();
-  const RUEDA_DELAY = 120; //Probar cuando ponga los sonidos si esto ayuda subirlo
+  // --- CONTROL MOVIMIENTO DEL MENU CON LA RUEDA DEL MOUSE --- 
+  
+  //let lastRueda = performance.now();
+  //const RUEDA_DELAY = 120; //Probar cuando ponga los sonidos si esto ayuda subirlo
 
-  actualizarVista(); 
+  //actualizarVista(); 
 
-  window.addEventListener('wheel', (e) => {
-      const now = performance.now();
+  //window.addEventListener('wheel', (e) => {
+      //const now = performance.now();
       // Previene el cambio si ha pasado muy poco tiempo desde el último scroll.
-      if (now - lastRueda < RUEDA_DELAY) {
-          e.preventDefault();
-          return;
+      //if (now - lastRueda < RUEDA_DELAY) {
+          //e.preventDefault();
+          //return;
+      //}
+      //lastRueda = now;
+
+      //e.preventDefault();
+
+      //if (e.deltaY < 0 && indiceActual > 0) {
+          //indiceActual--; // Rueda a arriba 
+      //} else if (e.deltaY > 0 && indiceActual < ventanas.length - 1) {
+          //indiceActual++; // Rueda a abajo
+      //}
+
+      //actualizarVista();
+  //}, { passive: false });
+
+  // --- CONTROL MOVIMIENTO DEL MENU CON LAS TECLAS ---
+
+  let ultimoTiempoTecla = 0; 
+  const TECLA_DELAY = 120; 
+
+  window.addEventListener('keydown', (e) => {
+    const now = performance.now();
+        
+      if (now - ultimoTiempoTecla < TECLA_DELAY) {
+        return;
       }
-      lastRueda = now;
 
-      e.preventDefault();
+      let indiceCambiado = false;
+      const tecla = e.key.toLowerCase(); // Guarda la tecla en minúscula
 
-      if (e.deltaY < 0 && indiceActual > 0) {
-          indiceActual--; // Rueda a arriba 
-      } else if (e.deltaY > 0 && indiceActual < ventanas.length - 1) {
-          indiceActual++; // Rueda a abajo
-      }
-
-      actualizarVista();
-  }, { passive: false });
+      if (tecla === 'y') {
+          if (indiceActual > 0) {
+              indiceActual--;
+              indiceCambiado = true;
+          }
+        } 
+        else if (tecla === 'k') {
+            if (indiceActual < ventanas.length - 1) {
+                indiceActual++;
+                indiceCambiado = true;
+            }
+        }
+        if (indiceCambiado) {
+            ultimoTiempoTecla = now; // Reinicia el contador del delay
+        }
+        actualizarVista();
+    });  
 });
 
 
