@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bitia: Infografía interactiva | Home</title>
+    <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="desktop">
+        <aside class="rightbar">
+            <div class="widget" data-ventana="calendario">
+                <img src="../img/calendar-widget.png" alt="">
+                <h5 class="widget-name">Calendario</h5>
+            </div></a>
+           
+            <div class="widget">
+                <img src="../img/reproductor-gris.png" alt="">
+                <h5 class="widget-name">Reproductor</h5>
+            </div>
+            <div class="widget">
+                <img src="../img/mezclador-gris.png" alt="">
+                <h5 class="widget-name">Mezclador</h5>
+            </div>
+        </aside>
+        <div class="loop" id="loop">
+            <div class="loop-dialogo" id="loop-dialogo">
+                <p>Hola! Soy Loop, voy a ser tu guia en esta experiencia. ¡Espero que te diviertas!</p>
+            </div>  
+            <img src="../img/loop-feliz.png" class="loop-img" alt="Imagen de loop ayudante virtual">
+        </div>
+
+        <!---------- WIDGET DE CALENDARIO ---------->
+        <div class="ventana" data-ventana="calendario">
+            <!---------- Contenedor 3D de todas las ventanas del calendario ---------->    
+            <div class="contenedor-3d">
+                <!---------- Contenedor individual de los divs individuales o sea cada pagina o año de la linea ---------->
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">1930/40</h3>
+                            <h5>PIONEROS DEL SONIDO</h5>
+                            <p class="parrafo-calendario">Raymond Scott, pionero en la música electrónica y experimental.</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/1930.png" alt=""></div>
+                    </div>
+                </div>  
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">1950</h3>
+                            <p class="parrafo-calendario">Illiac Suite: Primera pieza generada por computadora.</p>
+                            <p class="parrafo-calendario">Raymond Scott desarrolla el Electronium, máquina que genera música a partir de patrones aleatorios.</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/1950.png" alt="Imagen de Raymond Scott con su 'Electronium'"></div>
+                    </div>
+                </div>
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">1960/70</h3>
+                            <p class="parrafo-calendario">MUSIC-N: Programas pioneros de síntesis digital (Max Mathews).</p>
+                            <p class="parrafo-calendario">Primer canto sintético en computadora (“Daisy Bell”), inspiración para HAL 9000.</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/1960.png" alt="Imagen de Max Mathews"></div>
+                    </div>
+                </div>
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">1990</h3>
+                            <p class="parrafo-calendario">Proyectos académicos de síntesis de canto (Fraunhofer, MBROLA, DECtalk).</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/1990.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">2000</h3>
+                            <p class="parrafo-calendario">Vocaloid (Yamaha): Software de síntesis vocal realista.</p>
+                            <p class="parrafo-calendario">Hatsune Miku: Primera estrella pop virtual masiva con conciertos y fandom global.</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/2000.png" alt="Imagen de 'Hatsune Miku"></div>
+                    </div>
+                </div>
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">2010</h3>
+                            <p class="parrafo-calendario">Flow Machines (Daddy 's Car): Primer tema pop compuesto por IA con notoriedad mundial.</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/2010.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="calendario-ventana">
+                    <div class="contenido-calendario">
+                        <div class="texto-calendario">
+                            <h3 class="year">2020</h3>
+                            <p class="parrafo-calendario">Expansión de la IA musical: AIVA compone bandas sonoras. FN Meka es un rapero virtual. Jukebox, MusicLM o Suno crean canciones completas con letra y música.</p>
+                        </div>
+                        <div class="imagen-calendario"><img src="../img/2020.png" alt="Imagen del rapero IA 'FN Meka'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------- BARRA DE TAREAS ---------->
+        <div class="taskbar">
+            <img class="taskbar-logo" src="../img/windows-vista-icon-seeklogo.png" alt="">
+        </div>
+    </main>
+    <script src="dialogo.js"></script>
+    <script src="rightbar.js"></script>
+    <script src="widgets.js"></script>
+    <script src="movimientoMenu.js"></script>
+</body>
+</html>
